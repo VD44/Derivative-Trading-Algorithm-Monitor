@@ -1,0 +1,41 @@
+<div *ngIf="status==200" class="main">
+  <mat-form-field *ngFor="let key of objectKeys(opts)">
+    <mat-select placeholder="{{transform_label(key)}}" (selectionChange)="selectOption($event)" [(value)]="selectedOptions[key]">
+      <mat-option *ngFor="let val of opts[key]" [value]="val">
+        {{transform_label(val)}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="chart-div" *ngIf="chart">
+    <canvas #canvas id="canvas">{{ chart }}</canvas>
+  </div>
+
+  <mat-card id="footer">
+    <table>
+      <tr>
+        <th> RETURNS </th>
+        <th> ALPHA </th>
+        <th> BETA </th>
+        <th> SHARPE </th>
+        <th> DRAWDOWN </th>
+      </tr>
+      <tr>
+        <td> {{percent(stats.returns)}} </td>
+        <td> {{round(stats.alpha)}} </td>
+        <td> {{round(stats.beta)}} </td>
+        <td> {{round(stats.sharpe)}} </td>
+        <td> {{'-'+percent(stats.drawdown)}} </td>
+      </tr>
+    </table>
+  </mat-card>
+</div>
+
+<div *ngIf="status!=200" class="form-container">
+  <mat-card>
+    <mat-form-field>
+      <input matInput placeholder="Enter Key" (keydown)="setKey($event)">
+    </mat-form-field>
+    <p *ngIf="triedKey">Not a valid key.</p>
+  </mat-card>
+</div>

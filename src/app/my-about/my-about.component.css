@@ -1,0 +1,10 @@
+.container {
+    width: 90%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+p {
+    color: #777;
+}

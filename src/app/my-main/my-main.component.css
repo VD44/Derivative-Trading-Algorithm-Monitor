@@ -1,0 +1,49 @@
+.form-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container mat-card {
+  width: 90%;
+}
+
+.form-container mat-form-field {
+	width: 100%;
+}
+
+p {
+  font-size: 0.75em; 
+  color: #f00; 
+  margin-top: -0.625em;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td, th {
+    padding: 8px 24px;
+}
+
+td {
+	font-size: 1.5em;
+	font-style: bold;
+}
+
+th {
+	color: #aaa;
+}
+
+#footer {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.main mat-form-field{
+	padding: 8px;
+}
