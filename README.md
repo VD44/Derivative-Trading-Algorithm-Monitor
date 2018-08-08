@@ -3,11 +3,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Screenshots
+<img src="./graph-alg.png" width="80%">
 <img src="./dash-alg.png" width="80%">
 <img src="./dropdown-alg.png" width="80%">
-<img src="./graph-alg.png" width="80%">
-<img src="./menu-phone-alg.png" width="80%">
-<img src="./phone-alg.png" width="80%">
+<img src="./menu-phone-alg.png" width="30%">
+<img src="./phone-alg.png" width="30%">
 
 ## Development server
 
