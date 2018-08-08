@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 <img src="./graph-alg.png" width="80%">
 <img src="./dash-alg.png" width="80%">
 <img src="./dropdown-alg.png" width="80%">
-<img src="./menu-phone-alg.png" width="30%"><img src="./phone-alg.png" width="30%">
+<p><img src="./menu-phone-alg.png" width="30%"><img src="./phone-alg.png" width="30%"></p>
 
 ## Development server
 
