@@ -3,7 +3,7 @@ Angular application to monitor investment strategy performance calculated on a r
 ## Content
 *[Screenshots](#Screenshots)
 *[API](#API)
-  *[Request and Send Graph Data][#Request and Send Graph Data]
+  *[Request and Send Graph Data][#Request-and-Send-Graph-Data]
   -Graph Requests
   -Request Email
 -Remote Server DB
