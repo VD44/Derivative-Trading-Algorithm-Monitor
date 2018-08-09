@@ -6,14 +6,16 @@ pollUrl = 'http://localhost:8008/data';
 statsUrl = 'http://localhost:8008/stats';
 ```
 
-First, in order to display a graph for a specific strategy this application will send a post request to ```pollUrl``` as such:
+First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
 
 
 Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` as such:
 
+All calculations take place on a remove server as to protect intelectual privacy. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and effeciency.
+
 In addition, an email can be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts) for others to request keys. By default set to:
 ```typescript
-keysEmail = 'algo.keys@gmail.com'
+keysEmail = 'algo.keys@gmail.com';
 ```
 ## Screenshots
 <img src="./graph-alg.png" width="80%">
