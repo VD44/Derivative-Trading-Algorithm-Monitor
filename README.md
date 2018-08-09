@@ -24,13 +24,21 @@ And expects to recieve a response as such:
   options : { // options and parameters to appear in dropdown select menu above graph,
     // selecting an option in the menu sends a new POST request to the server to get 
     // an update version of the results with these options
-    leverage : [1.0, 1.5, 2.0], // these are examples, you can use whatever names and values
-    rebalance : ['weekly', 'monthly'] // you want
+    leverage : [1.0, 1.5, 2.0], // these are examples, you can use whatever names and values you want
+    rebalance : ['weekly', 'monthly']
   },
   
   defaults : { // the defaults for the above options
     leverage : 1.0,
     rebalance : 'monthly'
+  },
+  
+  stats : { // stats to display under the graph
+    returns : 2.13, // these are examples, you can use whatever names and values you want
+    alpha : 0.11,
+    beta : 0.34,
+    sharpe : 1.24,
+    drawdown : 0.51
   }
 }
 ```
