@@ -58,7 +58,7 @@ And expects to recieve a response as such:
   stats : { // stats to display under the graph
     returns : 2.13, // these are examples, you can use whatever names and values you want
     alpha : 0.11,
-    beta : 0.34,
+    beta : 0.33,
     sharpe : 1.24,
     drawdown : 0.51
   }
