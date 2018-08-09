@@ -1,13 +1,20 @@
 Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time are displayed.
 
 ## Content
-*[Screenshots](#screenshots)
-*[API](#api)
-  *[Request and Send Graph Data](#request-and-send-graph-data)
-  *[Request and Send Dashboard Data](#request-and-send-dashboard-data)
-  -Request Email
--Remote Server DB
--API ref
+
+* [Screenshots](#screenshots)
+* [API](#api)
+  * [Request and Send Graph Data](#request-and-send-graph-data)
+  * [Request and Send Dashboard Data](#request-and-send-dashboard-data)
+  * [Email For Key Request](#email-for-key-request)
+* [Server Backend](#server-backend)
+* [Live Financial Data API Recommendations](#live-financial-data-api-recommendations)
+* [Angular Information](#algorithm-monitor)
+
+## Screenshots
+<img src="./graph-alg.png" width="80%">
+<img src="./dash-alg.png" width="80%">
+<img src="./dropdown-alg.png" width="80%">
 
 ## API
 Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts). By default they are set to:
@@ -82,17 +89,16 @@ Second, in order to populate the dashboard that displays the available strategie
   ... // an array of x number or strategies following the above example
 ]
 ```
-
-All calculations take place on a remove server as to protect intelectual privacy. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and effeciency.
-
+## Email for Key Request
 In addition, an email can be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts) for others to request keys. By default set to:
 ```typescript
 keysEmail = 'algo.keys@gmail.com';
 ```
-## Screenshots
-<img src="./graph-alg.png" width="80%">
-<img src="./dash-alg.png" width="80%">
-<img src="./dropdown-alg.png" width="80%">
+## Server Backend
+All calculations take place on a remove server as to protect intelectual privacy. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and effeciency.
+
+## Live Financial Data API Recommendations
+Alphavantage
 
 # Algorithm Monitor
 
