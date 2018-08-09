@@ -9,6 +9,31 @@ statsUrl = 'http://localhost:8008/stats';
 First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
 
 And expects to recieve a response as such:
+```typescript
+{
+  status : 200, //this value should be constant
+  
+  dates : ['2017-01-02', '2017-01-02', ...], // array of date strings following this format
+  
+  algorithm : [0, 0.006, 0.004, 0.0073, ...], // array with (normalized) data about the algorithms performace over time
+  
+  benchmark : [0, 0.005, 0.004, 0.0064, ...], // array with (normalized) benchmark data for comparison to algorithm
+  
+  benchmark-symbol : 'SPY', // the symbol that represents the benchmark above
+  
+  options : { // options and parameters to appear in dropdown select menu above graph,
+    // selecting an option in the menu sends a new POST request to the server to get 
+    // an update version of the results with these options
+    leverage : [1.0, 1.5, 2.0], // these are examples, you can use whatever names and values
+    rebalance : ['weekly', 'monthly'] // you want
+  },
+  
+  defaults : { // the defaults for the above options
+    leverage : 1.0,
+    rebalance : 'monthly'
+  }
+}
+```
 
 
 Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` expecting to receive a response as such:
@@ -24,7 +49,7 @@ Second, in order to populate the dashboard that displays the available strategie
       beta : 0.29, // have whatever names and values you wish to display
       sharpe : 1.2
   }
-... // an array of x number or strategies following the above example
+  ... // an array of x number or strategies following the above example
 ]
 ```
 
