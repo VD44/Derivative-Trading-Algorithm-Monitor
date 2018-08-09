@@ -1,11 +1,21 @@
 Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time are displayed.
 
+## Content
+*[Screenshots](#Screenshots)
+*[API](#API)
+  *[Request and Send Graph Data][#Request and Send Graph Data]
+  -Graph Requests
+  -Request Email
+-Remote Server DB
+-API ref
+
+## API
 Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts). By default they are set to:
 ```typescript
 pollUrl = 'http://localhost:8008/data';
 statsUrl = 'http://localhost:8008/stats';
 ```
-
+### Request and Send Graph Data
 First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
 ```typescript
 {
@@ -84,7 +94,7 @@ keysEmail = 'algo.keys@gmail.com';
 <img src="./dash-alg.png" width="80%">
 <img src="./dropdown-alg.png" width="80%">
 
-# AlgMonitor
+# Algorithm Monitor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
