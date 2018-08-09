@@ -1,4 +1,4 @@
-Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intelectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time as displayed.
+Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time as displayed.
 
 Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts). By default they are set to:
 ```typescript
