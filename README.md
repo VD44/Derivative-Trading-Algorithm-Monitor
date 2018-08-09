@@ -1,4 +1,4 @@
-Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time as displayed.
+Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time are displayed.
 
 Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts). By default they are set to:
 ```typescript
@@ -13,9 +13,18 @@ And expects to recieve a response as such:
 
 Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` expecting to receive a response as such:
 ```typescript
-{
-  a : 'g'
-}
+[{
+  id : 'abcd1234', // (string) some unique id to identify this strategy
+  
+  desc : 'Some Description', // (string) simple description to be displayed on dashboard card
+  
+  stats : { // a json object that returns whatever stats you want to display on the dashboard cards
+    alpha : 0.11, // these are just examples, these stats can
+    beta : 0.29, // have whatever names and values you wish to display
+    sharpe : 1.2
+  }
+... // an array of x number or strategies following the above example
+]
 ```
 
 All calculations take place on a remove server as to protect intelectual privacy. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and effeciency.
