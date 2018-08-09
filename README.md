@@ -7,6 +7,18 @@ statsUrl = 'http://localhost:8008/stats';
 ```
 
 First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
+```typescript
+{
+  id : 'abcd1234', // the id to identify the you want to view
+  
+  key : 'somekey', // the key the user has submitted to the server. '' if no key
+  
+  options : { // the selected options from the dropdown menus above the graph
+    'leverage' : 1.5, // these are examples, you can use whatever names and values you want
+    'rebalance' : 'weekly'
+  }
+}
+```
 
 And expects to recieve a response as such:
 ```typescript
