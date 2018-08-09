@@ -1,4 +1,4 @@
-Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time are displayed.
+Angular application to live test investment strategies. Performance is tracked and evaluated on a remote server and displayed in this application. Results can be made available publicly or under a key to protect intellectual property. Backend investment logic is never exposed in either case. Only results and statistics related to performance are displayed.
 
 ## Content
 
@@ -89,16 +89,16 @@ Second, in order to populate the dashboard that displays the available strategie
   ... // an array of x number or strategies following the above example
 ]
 ```
-## Email for Key Request
-In addition, an email can be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts) for others to request keys. By default set to:
+### Email for Key Request
+In addition, an email can be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts) for others to request keys. This mailto link will appear under the "Request Keys" link. By default set to an empty string:
 ```typescript
-keysEmail = 'algo.keys@gmail.com';
+keysEmail = '';
 ```
 ## Server Backend
-All calculations take place on a remove server as to protect intelectual privacy. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and effeciency.
+All calculations should take place on a remove server in order to protect intelectual property. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and efficiency.
 
 ## Live Financial Data API Recommendations
-Alphavantage
+[Alphavantage](https://www.alphavantage.co/) provides free live data for countless financial instruments across many markets for researchers, engineers, and business professionals. Historical and intraday data is also available using the free api. The API is extremely useful for live testing investment strategies.
 
 # Algorithm Monitor
 
