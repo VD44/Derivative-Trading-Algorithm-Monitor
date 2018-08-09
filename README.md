@@ -1,11 +1,28 @@
-# AlgMonitor
+Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intelectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time as displayed.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts). By default they are set to:
+```typescript
+pollUrl = 'http://localhost:8008/data';
+statsUrl = 'http://localhost:8008/stats';
+```
 
+First, in order to display a graph for a specific strategy this application will send a post request to ```pollUrl``` as such:
+
+
+Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` as such:
+
+In addition, an email can be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts) for others to request keys. By default set to:
+```typescript
+keysEmail = 'algo.keys@gmail.com'
+```
 ## Screenshots
 <img src="./graph-alg.png" width="80%">
 <img src="./dash-alg.png" width="80%">
 <img src="./dropdown-alg.png" width="80%">
+
+# AlgMonitor
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
 
@@ -18,14 +35,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
