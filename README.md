@@ -1,10 +1,10 @@
 Angular application to monitor investment strategy performance calculated on a remote server. Results can be made available publicly or under a key to protect intellectual privacy. Backend logic related to strategies is never exposed in either case, only results and statistics related to performance over time are displayed.
 
 ## Content
-*[Screenshots](#Screenshots)
-*[API](#API)
-  *[Request and Send Graph Data][#Request-and-Send-Graph-Data]
-  -Graph Requests
+*[Screenshots](#screenshots)
+*[API](#api)
+  *[Request and Send Graph Data][#request-and-send-graph-data]
+  *[Request and Send Dashboard Data][#request-and-send-dashboard-data]
   -Request Email
 -Remote Server DB
 -API ref
@@ -65,7 +65,7 @@ And expects to recieve a response as such:
 }
 ```
 
-
+### Request and Send Dashboard Data
 Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` expecting to receive a response as such:
 ```typescript
 [
