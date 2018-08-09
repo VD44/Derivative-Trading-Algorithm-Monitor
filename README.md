@@ -13,15 +13,16 @@ And expects to recieve a response as such:
 
 Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` expecting to receive a response as such:
 ```typescript
-[{
-  id : 'abcd1234', // (string) some unique id to identify this strategy
+[
+  {
+    id : 'abcd1234', // (string) some unique id to identify this strategy
   
-  desc : 'Some Description', // (string) simple description to be displayed on dashboard card
+    desc : 'Some Description', // (string) simple description to be displayed on dashboard card
   
-  stats : { // a json object that returns whatever stats you want to display on the dashboard cards
-    alpha : 0.11, // these are just examples, these stats can
-    beta : 0.29, // have whatever names and values you wish to display
-    sharpe : 1.2
+    stats : { // a json object that returns whatever stats you want to display on the dashboard cards
+      alpha : 0.11, // these are just examples, these stats can
+      beta : 0.29, // have whatever names and values you wish to display
+      sharpe : 1.2
   }
 ... // an array of x number or strategies following the above example
 ]
