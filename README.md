@@ -8,8 +8,15 @@ statsUrl = 'http://localhost:8008/stats';
 
 First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
 
+And expects to recieve a response as such:
 
-Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` as such:
+
+Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` expecting to receive a response as such:
+```typescript
+{
+  a : 'g'
+}
+```
 
 All calculations take place on a remove server as to protect intelectual privacy. It is recommended that performance time series data is stored in a database using SQL, MongoDB, etc for the purpose of security, stability and effeciency.
 
