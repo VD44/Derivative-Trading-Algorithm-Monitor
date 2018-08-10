@@ -1,6 +1,4 @@
-Angular application to live test investment strategies. Performance is tracked and evaluated on a remote server and displayed in this application. Results can be made available publicly or under a key to protect intellectual property. Backend investment logic is never exposed in either case. Only results and statistics related to performance are displayed.
-
-## Content
+Angular application to live test investment strategies. Performance is tracked and evaluated on a remote server and displayed in this application. Results can be made available publicly or under a key to protect intellectual property. Backend investment logic is never exposed in either case. Only results and statistics related to performance are displayed. This application is designed such that everything can be controlled from the server including the menus displayed, statistics given, and timescale displayed on the graph.
 
 * [Screenshots](#screenshots)
 * [API](#api)
@@ -26,7 +24,7 @@ statsUrl = 'http://localhost:8008/stats';
 First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
 ```typescript
 {
-  id : 'abcd1234', // the id to identify the you want to view
+  id : 'abcd1234', // the id of the algorithm that you want to view
   
   key : 'somekey', // the key the user has submitted to the server. '' if no key
   
@@ -37,7 +35,7 @@ First, in order to display a graph and statistics for a specific strategy this a
 }
 ```
 
-And expects to recieve a response as such:
+The server should respond as such:
 ```typescript
 {
   status : 200, //this value should be constant
