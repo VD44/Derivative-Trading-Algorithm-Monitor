@@ -1,4 +1,4 @@
-Angular application to live test investment strategies. Performance is tracked and evaluated on a remote server and displayed in this application. Results can be made available publicly or under a key to protect intellectual property. Backend investment logic is never exposed in either case. Only results and statistics related to performance are displayed. This application is designed such that everything can be controlled from the server including the menus displayed, statistics given, and timescale displayed on the graph.
+An Angular application to live test investment strategies. Performance is tracked and evaluated on a remote server and displayed in this application. Results can be made available publicly or under a key to protect intellectual property. Backend investment logic is never exposed, only results and statistics related to performance are displayed. This application is designed such that everything can be controlled from the server including the menus displayed, statistics given, and timescale displayed on the graph.
 
 * [Screenshots](#screenshots)
 * [API](#api)
@@ -21,7 +21,7 @@ pollUrl = 'http://localhost:8008/data';
 statsUrl = 'http://localhost:8008/stats';
 ```
 ### Request and Send Graph Data
-First, in order to display a graph and statistics for a specific strategy this application will send a post request to ```pollUrl``` as such:
+First, in order to display a graph and statistics for a specific strategy, this application will send a post request to ```pollUrl``` as such:
 ```typescript
 {
   id : 'abcd1234', // the id of the algorithm that you want to view
@@ -42,15 +42,15 @@ The server should respond as such:
   
   dates : ['2017-01-02', '2017-01-02', ...], // array of date strings following this format
   
-  algorithm : [0, 0.006, 0.004, 0.0073, ...], // array with (normalized) data about the algorithms performace over time
+  algorithm : [0, 0.006, 0.004, 0.0073, ...], // array with (normalized) data about algorithm performace
   
-  benchmark : [0, 0.005, 0.004, 0.0064, ...], // array with (normalized) benchmark data for comparison to algorithm
+  benchmark : [0, 0.005, 0.004, 0.0064, ...], // array with (normalized) benchmark data for comparison
   
   benchmark-symbol : 'SPY', // the symbol that represents the benchmark above
   
   options : { // options and parameters to appear in dropdown select menu above graph,
     // selecting an option in the menu sends a new POST request to the server to get 
-    // an update version of the results with these options
+    // an updated version of the results with these options
     leverage : [1.0, 1.5, 2.0], // these are examples, you can use whatever names and values you want
     rebalance : ['weekly', 'monthly']
   },
@@ -71,7 +71,7 @@ The server should respond as such:
 ```
 
 ### Request and Send Dashboard Data
-Second, in order to populate the dashboard that displays the available strategies a get request will be sent to ```statsUrl``` expecting to receive a response as such:
+Second, in order to populate the dashboard that displays the available strategies, the application sends a request to ```statsUrl``` expecting to receive a response as such from the server:
 ```typescript
 [
   {
@@ -80,8 +80,8 @@ Second, in order to populate the dashboard that displays the available strategie
     desc : 'Some Description', // (string) simple description to be displayed on dashboard card
   
     stats : { // a json object that returns whatever stats you want to display on the dashboard cards
-      alpha : 0.11, // these are just examples, these stats can
-      beta : 0.29, // have whatever names and values you wish to display
+      alpha : 0.11, // these are just examples, these stats can have any name and value
+      beta : 0.29,
       sharpe : 1.2
   }
   ... // an array of x number or strategies following the above example
