@@ -15,7 +15,7 @@ An Angular application to live test investment strategies. Performance is tracke
 <img src="./dropdown-alg.png" width="80%">
 
 ## API
-Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts). By default they are set to:
+Two addresses need to be specified under [master/src/app/data.service.ts](https://github.com/VD44/Quantitative-Financial-Strategies-Monitor/blob/master/src/app/data.service.ts) (details below). By default they are set to:
 ```typescript
 pollUrl = 'http://localhost:8008/data';
 statsUrl = 'http://localhost:8008/stats';
